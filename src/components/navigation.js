@@ -154,6 +154,7 @@ const Navigation = () => {
 
         {/* Lista över navigationslänkar */}
         <ul className={`${styles.navigation} `}>
+
           {/* Separera Home från resten och placera det först */}
           <li className={styles.navigationItem}>
             <Link to="/" activeClassName={styles.active}>
