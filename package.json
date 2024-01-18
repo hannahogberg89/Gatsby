@@ -19,14 +19,18 @@
     "@contentful/rich-text-react-renderer": "^15.19.0",
     "@gatsbyjs/reach-router": "^2.0.1",
     "autoprefixer": "^10.4.16",
-    "gatsby": "^3.14.0",
+    "gatsby": "^5.12.12",
+    "gatsby-link": "^5.13.0",
     "gatsby-plugin-image": "^3.13.0",
     "gatsby-plugin-netlify": "^5.1.1",
     "gatsby-plugin-postcss": "^6.13.0",
     "gatsby-plugin-sharp": "^5.13.0",
+    "gatsby-react-router-scroll": "^6.13.0",
+    "gatsby-script": "^2.13.0",
     "gatsby-source-contentful": "^8.13.0",
     "gatsby-transformer-sharp": "^5.13.0",
-    "react": "^17.0.0",
+    "postcss": "^8.4.32",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-html-parser": "^2.0.2",
@@ -36,9 +40,5 @@
     "tailwindcss": "^3.3.6"
   },
   "main": "gatsby-browser.js",
-  "license": "ISC",
-  "devDependencies": {
-    "postcss": "^8.3.10",
-    "postcss-cli": "^9.0.1"
-  }
+  "license": "ISC"
 }
