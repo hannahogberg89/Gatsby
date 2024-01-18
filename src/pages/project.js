@@ -7,6 +7,7 @@ import Seo from '../components/seo';
 import Layout from '../components/layout';
 import ImageCarousel from '../components/imageCarousel';
 
+// Komponent för knappen som filtrerar projekt efter kategori
 const FilterButton = ({ category, isActive, onClick }) => (
   <button
     onClick={onClick}
@@ -27,11 +28,18 @@ const FilterButton = ({ category, isActive, onClick }) => (
   </button>
 );
 
+// Huvudkomponenten för projektsidan
 const ProjectIndex = ({ data }) => {
+  // Hämtar projektdata från GraphQL-queryn
   const projects = get(data, 'allContentfulProject.nodes');
+
+  // Skapar en lista med unika kategorier från projekten
   const allCategories = [...new Set(projects.map(project => project.category))];
+
+  // State för att hålla reda på vald kategori
   const [selectedCategory, setSelectedCategory] = useState(null);
 
+  // Filtrerar projekt baserat på vald kategori
   const filteredProjects = selectedCategory
     ? projects.filter(project => project.category === selectedCategory)
     : projects;
@@ -40,9 +48,10 @@ const ProjectIndex = ({ data }) => {
     <Layout location={data.location}>
       <Seo title="Projects" />
       <div className="text-center bg-black">
+        {/* Filterknappar för olika kategorier */}
         <div className="flex justify-center gap-2 mb-4 bg-black">
           <FilterButton
-            category="All"
+            category="Alla"
             isActive={!selectedCategory}
             onClick={() => setSelectedCategory(null)}
           />
@@ -56,13 +65,15 @@ const ProjectIndex = ({ data }) => {
           ))}
         </div>
 
+        {/* Visa projekt baserat på filtrering */}
         <div className="flex flex-wrap gap-4 justify-center bg-black">
           {filteredProjects.map(project => (
             <div key={project.slug} style={{ backgroundColor: '#7a5c58' }} className="p-2 rounded-lg shadow-md flex-grow flex-shrink-0 w-1/3 mx-4 mb-4">
-
+              {/* Projektinformation och bild */}
               <h2 className="text-xl font-semibold mb-2" style={{ color: '#e6dfd3', fontFamily: 'Montserrat, sans-serif' }}>{project.title}</h2>
               <GatsbyImage image={getImage(project.image)} alt={project.title} className="mt-4" />
 
+              {/* Visa projektbeskrivning om den finns */}
               {project.about && (
                 <div className="text-center">
                   {documentToReactComponents(JSON.parse(project.about.raw), {
@@ -81,19 +92,18 @@ const ProjectIndex = ({ data }) => {
                 </div>
               )}
 
-
-
-              {/* Bildkarusell */}
+              {/* Bildkarusell om det finns fler bilder */}
               {project.image2 && <ImageCarousel images={project.image2} />}
               <br />
 
-
+              {/* Läs mer-länk som leder till projektets sida */}
               <Link to={`/project-page/${project.slug}/`} className="read-more-button mt-4 block">
-                Read More
+                Läs mer
               </Link>
               <br />
               <br />
 
+              {/* Visa länkar om de finns */}
               {project.links && (
                 <div className="text-center">
                   {documentToReactComponents(JSON.parse(project.links.raw), {
@@ -124,6 +134,7 @@ const ProjectIndex = ({ data }) => {
   );
 };
 
+// GraphQL-query för att hämta projektdata från Contentful
 export const pageQuery = graphql`
   query {
     allContentfulProject(filter: { node_locale: { eq: "en-US" } }) {
