@@ -1,17 +1,47 @@
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ded9d9;
+  /* Färg på punkten */
+  border-radius: 50%;
+  /* Gör det cirkulärt */
+  margin-left: 10px;
+  margin-right: 0px;
+
+}
+
+.iconContainer {
+  display: flex;
+  gap: 10px;
+}
+
 .container {
-  border-top: 10px solid var(--border);
-  font-size: var(--text-sm);
-  margin-top: var(--space-2xl);
-  padding: var(--space-2xl) 0;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #000000;
+  color: white;
 }
 
-.container a {
-  border-bottom: 1.5px solid transparent;
-  font-weight: var(--medium);
+footer {
+  background-color: #000000;
 }
 
-.container a:hover {
-  border-bottom-color: var(--primary);
-  color: var(--primary);
+.section {
+  flex: 1;
+
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.link:hover {
+  text-decoration: wavy;
+  color: #796664;
 }

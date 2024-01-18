@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
   const { site } = useStaticQuery(
@@ -14,10 +14,10 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata?.title;
 
   return (
     <Helmet
@@ -29,48 +29,50 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription,
         },
         {
-          name: `image`,
+          name: 'image',
           content: image,
         },
         {
-          property: `og:title`,
+          property: 'og:title',
           content: title,
         },
         {
-          property: `og:description`,
+          property: 'og:description',
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:type',
+          content: 'website',
         },
         {
-          property: `og:image`,
+          property: 'og:image',
           content: image,
         },
         {
-          name: `twitter:card`,
-          content: `summary_large_image`,
+          rel: 'canonical',
+          href: 'http://localhost:8000/',
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
+          name: 'robots',
+          content: 'index, follow',
         },
         {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'http://schema.org',
+            '@type': 'Organization',
+            name: 'Hanna Högberg',
+            url: 'http://localhost:8000/',
+            description: 'Min portfolio som frontend utvecklare.',
+          }),
         },
       ].concat(meta)}
     />
-  )
-}
+  );
+};
 
-export default Seo
+export default Seo;

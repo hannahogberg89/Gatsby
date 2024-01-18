@@ -23,6 +23,8 @@
   --space-xl: 20px;
   --space-2xl: 24px;
   --space-3xl: 48px;
+  --space-4xl: 100%;
+
 
   /* line-height */
   --solid: 1;
@@ -68,8 +70,8 @@
 
   /* size */
   --size-gutter: var(--space-2xl);
-  --size-logo: var(--space-2xl);
-  --size-max-width: 80rem;
+  --size-logo: var(--space-xl);
+  --size-max-width: 160rem;
 }
 
 @media (min-width: 480px) {

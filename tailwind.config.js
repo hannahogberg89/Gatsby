@@ -5,7 +5,11 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        '97807d': '#97807d', // Lägg till din anpassade färg här
+      },
+    },
   },
   plugins: [],
 }

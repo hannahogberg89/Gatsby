@@ -1,49 +1,47 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
+import Layout from '../components/layout';
+import '../templates/blog-post.module.css';
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const NotFoundPage = () => (
+  <Layout>
+    <div
+      style={{
+        fontSize: '20px',
+        fontFamily: 'Montserrat, sans-serif',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '50px'
+      }}
+    >
+      <h1>404: Not Found</h1>
+      <p>Tyvärr var detta en sida som inte fanns, gå tillbaka och upptäck mycket mer.</p>
+      <Link to="/">
+        <button
+          style={{
+            padding: '10px',
+            marginTop: '50px',
+            marginBottom: '50px',
+            cursor: 'pointer',
+            backgroundColor: '#000',
+            color: '#fff',
+            fontFamily: 'Montserrat, sans-serif',
+            backgroundColor: 'rgb(190, 95, 82)',
+            color: 'rgb(230, 223, 211)',
+            padding: '10px 15px',
+            border: 'none',
+            borderRadius: '5px',
+            transition: 'background-color 0.3s',
+          }}
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+        >
+          Back to Homepage
+        </button>
+      </Link>
+    </div>
+  </Layout>
+);
 
-const NotFoundPage = () => {
-  return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
-
-export default NotFoundPage
-
-export const Head = () => <title>Not found</title>
+export default NotFoundPage;

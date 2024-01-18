@@ -1,0 +1,115 @@
+/* about.css */
+.about {
+  background-color: black;
+}
+
+.profile-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.description-box,
+.image-box {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #beb2b2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.description-box h2 {
+  text-transform: uppercase;
+  color: #ffffff;
+  /* heading-2 text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* mörk skugga */
+}
+
+.description2-box h2 {
+  text-transform: uppercase;
+  color: #ffffff;
+  /* heading-2 text här */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /*  mörk skugga */
+}
+
+.description-box p,
+.description-box h2 {
+  white-space: pre-line;
+}
+
+@media (max-width: 767px) {
+  .profile-container {
+    display: block;
+  }
+
+  .flex-container {
+    display: block;
+    /* Använd block istället för flex på mobilen */
+  }
+
+  .description-box,
+  .image-box {
+    flex: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 768px) {
+
+  /* Desktop-stilar */
+  .description-box,
+  .image-box {
+    flex: 1;
+    width: calc(50% - 20px);
+    /* 50% bredd minus padding för att hålla samma storlek */
+  }
+}
+
+/* Gemensamma stilar för båda knapparna */
+.read-more-btn,
+.read-less-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Stilar för Läs mer-knappen */
+.read-more-btn {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #d0d5d8;
+  color: #413636;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.read-more-btn:hover {
+  background-color: #413636;
+  color: #d0d5d8;
+  transform: scale(1.05);
+}
+
+/* Stilar för Läs mindre-knappen */
+.read-less-btn {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #413636;
+  color: #d0d5d8;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.read-less-btn:hover {
+  background-color: #d0d5d8;
+  color: #413636;
+  transform: scale(1.05);
+}

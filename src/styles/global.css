@@ -1,3 +1,223 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300&family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.link-button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #be5f52;
+  color: #e6dfd3;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.link-button:hover {
+  background-color: #e6dfd3;
+  color: #000;
+}
+
+
+.nodetext {
+  text-transform: uppercase;
+  font-size: 23px;
+  background: linear-gradient(to right, #7a5c58, #ffffff);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+
+/* global.css */
+.project-container {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px;
+  background-color: #dacec4;
+  border-radius: 8px;
+  box-shadow: 10px -10px 0px rgba(146, 23, 23, 0.1);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.button {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #7a5c58;
+  /* Coral färg för knappen */
+  color: #d2c6c6;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+  background-color: #bda19c;
+  /* Mörkare färg vid hovring */
+  color: rgb(19, 18, 18);
+  transform: scale(1.05);
+  /* Tryck in effekt med 3D-skala */
+}
+
+.button2 {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #F5E9E8;
+  color: #363131;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button2:hover {
+  background-color: #2a2423;
+  transform: scale(1.05);
+}
+
+.project {
+  background-color: #000000;
+  color: #FFF;
+}
+
+.project-skills {
+  background-color: #7a5c58;
+  padding: 40px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 60px;
+  background: linear-gradient(to right, #7a5c58, #320909);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  display: grid;
+  place-items: center;
+}
+
+.project-h1 {
+  text-transform: uppercase;
+  font-size: 80px;
+  background: linear-gradient(to right, #7a5c58, #ffffff);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+
+/* Center the button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* styles/buttons.css */
+
+.read-more-button {
+  font-family: Montserrat, sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e6dfd3;
+  /* Anpassa färgen efter dina önskemål */
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.read-more-button:hover {
+  background-color: #242424;
+  color: #e1dada;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* global.css */
+
+.profile-container {
+  text-align: center;
+}
+
+/* global.css */
+
+.profile-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 43px;
+  background: linear-gradient(to right, #332121, #b08b86);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center;
+}
+
+.profile-subtitle {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.underline-link {
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+  transition: color 0.3s, background-color 0.3s;
+  border-bottom: 2px solid #656564;
+  /* Beige underline */
+}
+
+.underline-link:hover {
+  color: #000;
+}
+
+.hover-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #481616;
+  /* Ändra färgen till röd */
+  transform: translateX(-101%);
+  /* Ändra translationen till vänster */
+  transition: transform 0.3s, opacity 0.3s;
+  transition-delay: 0s;
+  /* Återställ transition delay när musen är över länken */
+}
+
+.underline-link:hover .hover-line {
+  transform: translateX(0);
+  /* Ändra translationen till 0 */
+  opacity: 1;
+  /* Lägg till opacity för att låta linjen visas */
+  transition-delay: 0.3s;
+  /* Skjut upp försvinnandet efter 0.3s */
+}

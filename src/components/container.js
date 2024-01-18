@@ -1,19 +1,21 @@
-import React from 'react'
+import React from 'react';
 
+// Container-komponenten tar emot två props: children och as (default är 'div')
 const Container = ({ children, as = 'div' }) => {
-  const Tag = as
+  // Skapa en variabel "Tag" baserat på värdet av "as" (HTML-taggen för containern)
+  const Tag = as;
 
+  // Returnera JSX för containern med stilmall
   return (
     <Tag
       style={{
-        maxWidth: 'var(--size-max-width)',
-        margin: '0 auto',
-        padding: 'var(--space-2xl) var(--size-gutter)',
+        width: '100%',  // Bredden på container
+        padding: 'var(--space-3xl) var(--size-gutter)',  // Storleken på padding sätts med hjälp av variabler
       }}
     >
-      {children}
+      {children}  {/* Renderar innehållet (children) i containern */}
     </Tag>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;

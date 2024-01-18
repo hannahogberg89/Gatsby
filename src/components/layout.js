@@ -1,24 +1,28 @@
-import React from 'react'
+// layout.js
+import React from 'react';
+import './variables.css';
+import './global.css';
+import Seo from './seo';
+import Navigation from './navigation';
+import Footer from './footer';
 
-import './variables.css'
-import './global.css'
-import Seo from './seo'
-import Navigation from './navigation'
-import Footer from './footer'
-class Template extends React.Component {
-  render() {
-    const { children } = this.props
+const Layout = ({ children }) => {
 
-    return (
-      <>
-        <Seo />
 
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-      </>
-    )
-  }
-}
+  const handleSearch = (term) => {
+    // Implementera önskad söklogik här baserat på söktermen
+    console.log('Sökterm:', term);
+  };
 
-export default Template
+  return (
+    <>
+      <Seo />
+
+      <Navigation onSearch={handleSearch} />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
+};
+
+export default Layout;
